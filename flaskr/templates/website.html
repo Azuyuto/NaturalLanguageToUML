@@ -2,21 +2,23 @@
 <html>
     <head>
         <title>Your Machine Learning App</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="{{ url_for('static', filename='track_changes.js') }}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     </head>
     
     <body>
-        <form name="form", method="POST", style="text-align: center;">
+        <form class="input" name="form" method="POST">
             <br>
-            Your text: <input type="text" name="text", placeholder="Your text" required/>
+            Your text: <input type="text" name="text" placeholder="Your text" required/>
             <br><br>
             <button>Run</button>
         </form>
-        <div style="text-align: center;">
+        <div class="output" style="text-align: center;" id="output"></div>
+        <pre class="mermaid image">
             {{ output }}
-            <pre class="mermaid">
-                {{ output }}
-            </pre>
-        </div>
+        </pre>
         <script type="module">
             import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
             mermaid.initialize({ startOnLoad: true });
