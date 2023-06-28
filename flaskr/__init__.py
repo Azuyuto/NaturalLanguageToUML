@@ -54,7 +54,7 @@ def create_app(test_config=None):
         if request.method == "POST":
             current_output = ''
 
-            model = load_model('flaskr/my_model6.h5')
+            model = load_model('flaskr/my_model5.h5')
             input_text = request.form.get("text")
 
             prediction = text_to_diagram(model, input_text)
